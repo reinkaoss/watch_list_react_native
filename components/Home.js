@@ -123,7 +123,7 @@ function Home() {
         renderItem={renderMovie}
         sliderWidth={400}
         itemWidth={300}
-        itemHeight={400}
+        itemHeight={100}
       />
     );
   };
@@ -148,7 +148,7 @@ function Home() {
     <View style={styles.container}>
        {/* <ScrollView style={styles.scroll}> */}
       <Text style={styles.title}>Find a Random Movie!</Text>
-      <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+      <Text style={styles.text}>Don't know what to watch? Don't worry, we've got you covered. Click the Search button to get instant movie recommendations.</Text>
       {renderMovies()}
       <Text style={styles.instructions}>Click the film cover for more info.</Text>
       <View style={styles.buttonContainer}>
@@ -193,11 +193,10 @@ function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: 5,
     backgroundColor: "#333",
     justifyContent: "center",
     alignItems: "center",
-    
   },
   instructions: {
     color: 'white',
@@ -211,7 +210,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold",
     fontSize: 28,
-    paddingTop: 5,
+    paddingTop: 2,
   },
   text: {
     // flex: 0.1,
@@ -220,29 +219,32 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center',
     marginTop: 10,
-    marginBottom: 25,
+    marginBottom: 5,
     textAlign: 'center',
   },
 
   // Card
   card: {
+    flex: 1,
     borderRadius: 15,
+    // width: 200,
+   
   },
 
   cardContainer: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
   },
   image: {
     height: 270,
-    width: 200,
-    // aspectRatio: 2 / 2, // set a fixed aspect ratio for the image
+    width: 220,
+    // aspectRatio: 1 / 1, // set a fixed aspect ratio for the image
     // maxHeight: 280,
-    // maxWidth: 220,
-    // alignItems: "center",
+    // maxWidth: 200,
+    // // alignItems: "center",
     // alignContent: "center",
-    // borderRadius: 5,
+    // justifyContent: 'center',
+    borderRadius: 5,
   },
   cardTitle: {
     fontWeight: "bold",
@@ -250,8 +252,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   buttonContainer: {
-    // flex: 0.1,
-    backgroundColor: 'red',
+    flex: 0.3,
     alignContent: 'center',
     justifyContent: 'center',
     width: 150,
@@ -263,34 +264,41 @@ const styles = StyleSheet.create({
   rating: {
     width: 80,
     marginLeft: 70,
-    marginBottom: 10,
-    marginTop: 10,
+    marginBottom: 5,
+    marginTop: 5,
+    alignContent: 'center',
+    justifyContent: 'center',
   },
 
    // Modal 
   modalContainer: {
-    flex: 1,
+    flex: 0.7,
     backgroundColor: "#fff",
-    paddingTop: 50,
-    paddingBottom: 50,
+    // paddingTop: 10,
+    // paddingBottom: 10,
   },
 
- 
   modalImage: {
-    height: 300,
+    height: 350,
     width: "100%",
-    marginBottom: 20,
+    // paddingBottom: 10,
+    // marginBottom: 10,
+    // aspectRatio: 1/1,
+    // justifyContent: "center",
+    // alignItems: 'center',
+    // margin: 20,
   },
   modalTitle: {
     fontSize: 24,
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 10,
+    marginTop: 20,
   },
   modalRating: {
-    fontSize: 18,
+    fontSize: 16,
     textAlign: "center",
-    marginBottom: 10,
+    marginBottom: 5,
   },
   modalPlot: {
     fontSize: 16,
@@ -299,8 +307,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   modalButton: {
-    width: "100%",
-    marginTop: 20,
+    width: "70%",
+    marginTop: 10,
   },
 });
 
