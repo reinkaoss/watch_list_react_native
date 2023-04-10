@@ -10,8 +10,8 @@ const Drawer = createDrawerNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Navigator  initialRouteName="Home">
+        <Drawer.Screen  name="Home" component={Home} />
         <Drawer.Screen name="Favorites" component={Favorites} />
       </Drawer.Navigator>
     </NavigationContainer>

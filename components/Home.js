@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Alert,
   Modal,
+  ScrollView
 } from "react-native";
 import { Card, Button, SearchBar } from "react-native-elements";
 import Carousel from "react-native-snap-carousel";
@@ -145,14 +146,16 @@ function Home() {
 
   return (
     <View style={styles.container}>
+       {/* <ScrollView style={styles.scroll}> */}
       <Text style={styles.title}>Find a Random Movie!</Text>
       <Text style={styles.text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
       {renderMovies()}
+      <Text style={styles.instructions}>Click the film cover for more info.</Text>
       <View style={styles.buttonContainer}>
         <Button
           style={styles.button}
-          icon={{ name: "rowing", color: "#ffffff" }}
-          title="MEOW"
+          icon={{ name: "movie", color: "#ffffff" }}
+          title="Search"
           onPress={handleSearch}
         />
       </View>
@@ -178,16 +181,11 @@ function Home() {
                 onPress={() => setSelectedMovie(null)}
                 style={styles.modalButton}
               />
-        {/* <Button
-          style={styles.button}
-          icon={{ name: "star", color: "#ffffff" }}
-          title="Watch Later"
-          onPress={() => handleWatchLater(selectedMovie)}
-        /> */}
             </>
           )}
         </View>
       </Modal>
+      {/* </ScrollView> */}
     </View>
   );
 }
@@ -195,66 +193,89 @@ function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 30,
-    backgroundColor: "salmon",
+    padding: 10,
+    backgroundColor: "#333",
     justifyContent: "center",
     alignItems: "center",
     
+  },
+  instructions: {
+    color: 'white',
+    fontStyle: 'italic',
+    // flex: 0.1,
+    justifyContent: 'center',
+    alignContent: 'center',
+    padding: 20,
   },
   title: {
     color: "white",
     fontWeight: "bold",
     fontSize: 28,
-    paddingTop: 25,
+    paddingTop: 5,
   },
   text: {
+    // flex: 0.1,
     color: "white",
     fontWeight: "bold",
     fontSize: 12,
-    paddingTop: 25,
+    textAlign: 'center',
+    marginTop: 10,
+    marginBottom: 25,
     textAlign: 'center',
   },
+
+  // Card
   card: {
-    maxWidth: 200,
     borderRadius: 15,
-    
   },
+
   cardContainer: {
-    flex: 2.5,
+    flex: 1,
     justifyContent: "center",
     alignItems: "center",
   },
   image: {
-    height: 300,
-    aspectRatio: 2 / 2, // set a fixed aspect ratio for the image
-    maxHeight: 400,
-    minWidth: 50,
-    maxWidth: 200,
-    alignItems: "center",
-    alignContent: "center",
-    borderRadius: 5,
-    padding: 0,
-    
+    height: 270,
+    width: 200,
+    // aspectRatio: 2 / 2, // set a fixed aspect ratio for the image
+    // maxHeight: 280,
+    // maxWidth: 220,
+    // alignItems: "center",
+    // alignContent: "center",
+    // borderRadius: 5,
   },
   cardTitle: {
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 18,
     textAlign: "center",
   },
   buttonContainer: {
-    flex: 0.3,
+    // flex: 0.1,
+    backgroundColor: 'red',
+    alignContent: 'center',
+    justifyContent: 'center',
     width: 150,
   },
   button: {
     width: 50,
-    borderRadius: 10,
   },
+
+  rating: {
+    width: 80,
+    marginLeft: 70,
+    marginBottom: 10,
+    marginTop: 10,
+  },
+
+   // Modal 
   modalContainer: {
     flex: 1,
     backgroundColor: "#fff",
     paddingTop: 50,
     paddingBottom: 50,
   },
+
+ 
   modalImage: {
     height: 300,
     width: "100%",
